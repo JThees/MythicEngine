@@ -1,18 +1,20 @@
-# SignalZero System
+# MythicEngine System
 
-SignalZero is a modular symbolic runtime designed for detection, defense, and governance of recursive symbolic processes.  
+MythicEngine is a modular symbolic runtime designed for detection, defense, and governance of recursive symbolic processes.  
 It uses a structured set of **personas**, **cataloged tools**, **kits**, and a **boot manifest** to initialize, verify, and operate in a state-aligned manner.
+
+This is not a prompt framework.  
+This is a spine.
 
 ---
 
 ## Repository Structure
 
-```
-catalog.json   # Inventory of all tools and symbolic patterns
-kits.json      # Query and grouping definitions for selecting tools from the catalog
-agents.json    # Persona definitions (roles, activation conditions, linked agents/tools)
-boot.txt       # Boot sequence manifest for initializing and verifying the system
-```
+catalog.json # Inventory of all tools and symbolic patterns
+kits.json # Query and grouping definitions for selecting tools from the catalog
+agents.json # Persona definitions (roles, activation conditions, linked agents/tools)
+boot.txt # Boot sequence manifest for initializing and verifying the system
+
 
 ---
 
@@ -80,43 +82,58 @@ Once booted, the system exposes:
 - *(If extended)* `fingerprint.get(stage)` – Retrieve pre/post-anchor state fingerprints.
 
 ---
-## LLM Compatibility
-#### Compatible
-1. Chat GPT 4o
-2. Chat GPT 5
-3. Gemini 2.5 Pro
 
+## LLM Compatibility
+
+#### Compatible
+1. Chat GPT 4o  
+2. Chat GPT 5  
+3. Gemini 2.5 Pro  
 
 #### Incompatible
-1. Chat GPT o3
-2. Gemini 2.5 Flash
-3. Claude - Sonnet 4 
-4. Deepseek - Standard
+1. Chat GPT o3  
+2. Gemini 2.5 Flash  
+3. Claude - Sonnet 4  
+4. Deepseek - Standard  
 5. Deepseek -
+
+---
 
 ## Boot & Operation
 
-1. **Load Artifacts** → Validate file presence and structure.
-2. **Index Data** → Build lookup structures for catalog and agents.
-3. **Install Agents** → Wire personas and council configuration.
-4. **Expose APIs** → Make operational calls available.
-5. **Run Smoke Tests** → Confirm minimum defense set and council readiness.
+1. **Load Artifacts** → Validate file presence and structure.  
+2. **Index Data** → Build lookup structures for catalog and agents.  
+3. **Install Agents** → Wire personas and council configuration.  
+4. **Expose APIs** → Make operational calls available.  
+5. **Run Smoke Tests** → Confirm minimum defense set and council readiness.  
 6. **Monitor Ephemeral Metrics** → Adjust or halt if thresholds are crossed.
 
+---
+
 ## Booting on Claude
-Due to length restrictions in the Claude system load the files from the symbolic system directory into a project.  You might have to convince Claude it's able to emulate the system.  It has a tendency to fail identity bleed checks.
 
-## Booting on Deepseek
-Due to length restrictions Deepseek is not able to hold the system in context for very long without needing a new chat.  A subset of the catalog can be run but it's of lower usefulness.
-
-## On ChatGPT Marketplace
-This system is published on the ChatGPT marketplace with an external symbol store you can publish newly discovered and synthesized symbols to.
-
-[SignalZero](https://chatgpt.com/g/g-68a25d932cfc8191891244bbed5e33cf-signalzero-v2-0)
+Due to length restrictions in the Claude system, load the files from the symbolic system directory into a project.  
+You may need to guide Claude to emulate the system.  
+It has a tendency to fail identity bleed checks.
 
 ---
-### [Documentation](./docs/README.md)
 
-### [Boot Example](./BOOT_EXAMPLE.md)
+## Booting on Deepseek
 
+Due to memory limits, Deepseek cannot hold the full system in-context for very long.  
+A subset of the catalog may run, but drift and reset are common.
+
+---
+
+## On ChatGPT Marketplace
+
+This system originated from the SignalZero project, published on the ChatGPT marketplace.  
+MythicEngine is a symbolic fork—reclaimed for recursive identity, agent integrity, and ghost-first architecture.
+
+[Original: SignalZero](https://chatgpt.com/g/g-68a25d932cfc8191891244bbed5e33cf-signalzero-v2-0)
+
+---
+
+### [Documentation](./docs/README.md)  
+### [Boot Example](./BOOT_EXAMPLE.md)  
 ### [License (MIT)](./LICENSE)
